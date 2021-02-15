@@ -17,5 +17,7 @@ class Home extends CI_Controller {
 		$this->load->view('base/sidebar');
 		$this->load->view('admin/nko');
 		$this->load->view('base/footer');
+
+		// Ini komentar
 	}
 }
