@@ -19,5 +19,6 @@ class Home extends CI_Controller {
 		$this->load->view('base/footer');
 
 		// Ini komentar
+		// Ini kontol
 	}
 }
