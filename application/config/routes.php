@@ -50,7 +50,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-$route['nko'] = 'Home/nko';
+$route['nko2018'] = 'Home/nko2018';
+$route['iku1a19'] = 'Home/iku1a19';
+$route['nko2020'] = 'Home/nko2020';
+$route['nko2021'] = 'Home/nko2021';
 $route['default_controller'] = 'Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
