@@ -10,7 +10,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Invoice</li>
+              
             </ol>
           </div>
         </div>
@@ -103,7 +103,7 @@
               <!-- /.row -->
 
               <!-- Table row -->
-              <h4>Capaian pada tahun 2018</h4>
+              <h4><a href="<?= base_url('') ?>">Capaian pada tahun 2018</a></h4>
               <div class="row">
                 <div class="col-5 table-responsive">
                   <table class="table table-striped">
@@ -126,16 +126,16 @@
                     </tr>
                     <tr>
                       <td>Realisasi</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>100%</td>
                     </tr>
                     <tr>
                       <td>Capaian</td>
-                      <td>120%</td>
-                      <td>120%</td>
-                      <td>120%</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
                       <td>120%</td>
                     </tr>
                     </tbody>

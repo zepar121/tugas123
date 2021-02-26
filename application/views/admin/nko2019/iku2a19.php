@@ -10,7 +10,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Invoice</li>
+              
             </ol>
           </div>
         </div>
@@ -23,7 +23,7 @@
           <div class="col-12">
             <div class="callout callout-info">
               <h5>IKU 2a-CP</h5>
-              Indeks Kepuasan Pengguna Jasa.
+              Indeks kepuasan pengguna jasa.
             </div>
 
 
@@ -44,13 +44,11 @@
                 <div class="col-sm-12 invoice-col">
                   <h5>Kinerja:</h5>
                     <ul>
-                    <li>Telah dinyatakan lengkap oleh Kejaksaaan Negeri Simeuleu sesuai Surat Kepala Kejaksaan Negeri Simeulue Nomor B- 07/N.1.23/Ft.1/02/2019 (Penyidikan Deni S.)</li>
-                    <li>Telah dinyatakan lengkap oleh Kejaksaaan Negeri Aceh Selatan sesuai Surat Kepala Kejaksaan Negeri Simeulue Nomor B-479/N.1.17/Ft.1/04/2019 (Penyidikan Halimun)
-                    <li>Telah dinyatakan lengkap oleh Kejaksaaan Negeri Simeulue sesuai Surat Kepala Kejaksaan Negeri Simeulue Nomor B-38/L.1.23/Ft.1/09/2019 (Penyidikan Basri)</li>
-                    <li>Realisasi Pada Bulan Desember 90%</li>
-                    <li>Realisasi s.d Bulan Desember 90%</li>
-                    <li>Capaian s.d Bulan Desember 120%</li>
-                    
+                    <li>Berdasarkan Laporan Hasil Monitoring dan Pra Survey Kepuasan Pengguna Jasa Nomor  LAP-4/WBC.01/BD.05/2019, diperoleh nilai 4,84 (skala 5)</li>
+                    <li>Sudah ada permintaan data pengguna jasa untuk survei eksternal dari Dir. KI melaui ND 244/BC.08/2019</li>
+                    <li>Realisasi s/d Bulan Desember 4,60</li>
+                    <li>Capaian s/d Bulan Desember 105,02</li>
+                                        
                       </ul>
                   <h5>Risiko: -</h5>
 
@@ -76,24 +74,24 @@
                     <tbody>
                     <tr>
                       <td>Target</td>
-                      <td>30%</td>
-                      <td>40%</td>
-                      <td>50%</td>
-                      <td>70%</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>4.38</td>
                     </tr>
                     <tr>
                       <td>Realisasi</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>4.6</td>
                     </tr>
                     <tr>
                       <td>Capaian</td>
-                      <td>120%</td>
-                      <td>120%</td>
-                      <td>120%</td>
-                      <td>120%</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>105,02%</td>
                     </tr>
                     </tbody>
                   </table>
@@ -103,7 +101,7 @@
               <!-- /.row -->
 
               <!-- Table row -->
-              <h4>Capaian pada tahun 2018</h4>
+              <h4><a href="<?= base_url('') ?>">Capaian pada tahun 2018</a></h4>
               <div class="row">
                 <div class="col-5 table-responsive">
                   <table class="table table-striped">
@@ -126,16 +124,16 @@
                     </tr>
                     <tr>
                       <td>Realisasi</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>100%</td>
                     </tr>
                     <tr>
                       <td>Capaian</td>
-                      <td>120%</td>
-                      <td>120%</td>
-                      <td>120%</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
                       <td>120%</td>
                     </tr>
                     </tbody>

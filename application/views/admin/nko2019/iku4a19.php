@@ -10,7 +10,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Invoice</li>
+              
             </ol>
           </div>
         </div>
@@ -22,8 +22,8 @@
         <div class="row">
           <div class="col-12">
             <div class="callout callout-info">
-              <h5>IKU 4a-N</h5>
-              Indeks Penyelesaian Telaah di Bidang Kepabeanan dan Cukai.
+              <h5>IKU 3a-CP</h5>
+              Persentase Piutang Bea dan Cukai Yang Diselesaikan.
             </div>
 
 
@@ -42,17 +42,15 @@
               <!-- info row -->
               <div class="row invoice-info">
                 <div class="col-sm-12 invoice-col">
-                  <h5>Kinerja:</h5>
+                  
                     <ul>
-                    <li>Telah dinyatakan lengkap oleh Kejaksaaan Negeri Simeuleu sesuai Surat Kepala Kejaksaan Negeri Simeulue Nomor B- 07/N.1.23/Ft.1/02/2019 (Penyidikan Deni S.)</li>
-                    <li>Telah dinyatakan lengkap oleh Kejaksaaan Negeri Aceh Selatan sesuai Surat Kepala Kejaksaan Negeri Simeulue Nomor B-479/N.1.17/Ft.1/04/2019 (Penyidikan Halimun)
-                    <li>Telah dinyatakan lengkap oleh Kejaksaaan Negeri Simeulue sesuai Surat Kepala Kejaksaan Negeri Simeulue Nomor B-38/L.1.23/Ft.1/09/2019 (Penyidikan Basri)</li>
-                    <li>Realisasi Pada Bulan Desember 90%</li>
-                    <li>Realisasi s.d Bulan Desember 90%</li>
-                    <li>Capaian s.d Bulan Desember 120%</li>
-                    
+                    <li>Capaian s.d. bulan Desember = 110,74%</li>
+                    <li>PT. Ayu Lestari tidak melunasi Hutang</li>
+                    <li>PT. Sea Asih Lines telah melunasi hutang berupa denda administrasi sebesar Rp15.000.000,-</li>
+                    <li>PT.JBL telah melunasi piutang sebesar Rp 5.000.000</li>
+                                        
                       </ul>
-                  <h5>Risiko: -</h5>
+                  
 
                 </div>
                 
@@ -103,7 +101,7 @@
               <!-- /.row -->
 
               <!-- Table row -->
-              <h4>Capaian pada tahun 2018</h4>
+              <h4><a href="<?= base_url('') ?>">Capaian pada tahun 2018</a></h4>
               <div class="row">
                 <div class="col-5 table-responsive">
                   <table class="table table-striped">
@@ -126,16 +124,16 @@
                     </tr>
                     <tr>
                       <td>Realisasi</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>100%</td>
                     </tr>
                     <tr>
                       <td>Capaian</td>
-                      <td>120%</td>
-                      <td>120%</td>
-                      <td>120%</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
                       <td>120%</td>
                     </tr>
                     </tbody>

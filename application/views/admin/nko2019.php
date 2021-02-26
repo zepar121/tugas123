@@ -25,7 +25,7 @@
 
         <div class="row">
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><a href="<?= base_url('nko2018') ?>"><b>IKU 1a-CP</b></a></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku1a19') ?>"><b>IKU 1a-CP</b></a></div>
             <input type="text" class="knob" value="120" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#3c8dbc" readonly>
 
@@ -34,7 +34,7 @@
           </div>
           <!-- ./col -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 1b-CP</b></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku1b19') ?>"><b>IKU 1b-CP</b></a></div>
             <input type="text" class="knob" value="120" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#f56954" readonly>
 
@@ -43,7 +43,7 @@
           </div>
           <!-- ./col -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 2a-CP</b></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku2a19') ?>"><b>IKU 2a-CP</b></a></div>
             <input type="text" class="knob" value="105.2" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#00a65a" readonly>
 
@@ -52,7 +52,7 @@
           </div>
           <!-- ./col -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 3a-CP</b></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku3a19') ?>"><b>IKU 3a-CP</b></a></div>
             <input type="text" class="knob" value="110.7" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#00c0ef" readonly>
 
@@ -60,7 +60,7 @@
             <div class="knob-label">Realisasi : 100%</div>
           </div>
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 4a-N</b></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku4a19') ?>"><b>IKU 4a-N</b></a></div>
             <input type="text" class="knob" value="120" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#719E53" readonly>
 
@@ -69,7 +69,7 @@
           </div>
           <!-- ./col -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 5a-CP</b></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku5a19') ?>"><b>IKU 5a-CP</b></a></div>
             <input type="text" class="knob" value="120" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#A19C34" readonly>
 
@@ -78,7 +78,7 @@
           </div>
           <!-- ./col -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 6a-N</b></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku6a19') ?>"><b>IKU 6a-N</b></a></div>
             <input type="text" class="knob" value="110" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#8F6363" readonly>
 
@@ -87,7 +87,7 @@
           </div>
           <!-- ./col -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 7a-CP</b></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku7a19') ?>"><b>IKU 7a-CP</b></a></div>
             <input type="text" class="knob" value="108.7" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#439981" readonly>
 
@@ -95,7 +95,7 @@
             <div class="knob-label">Realisasi : 100%</div>
           </div>
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 8a-N</b></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku8a19') ?>"><b>IKU 8a-N</b></a></div>
             <input type="text" class="knob" value="117.6" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#E67F83" readonly>
 
@@ -104,7 +104,7 @@
           </div>
           <!-- ./col -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 8b-N</b></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku8b19') ?>"><b>IKU 8b-N</b></a></div>
             <input type="text" class="knob" value="120" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#B5D63D" readonly>
 
@@ -113,7 +113,7 @@
           </div>
           <!-- ./col -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 8c-N</b></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku8c19') ?>"><b>IKU 8c-N</b></a></div>
             <input type="text" class="knob" value="120" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#FFAE49" readonly>
 
@@ -122,7 +122,7 @@
           </div>
           <!-- ./col -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 9a-N</b></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku9a19') ?>"><b>IKU 9a-N</b></a></div>
             <input type="text" class="knob" value="120" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#5AB4BD" readonly>
 
@@ -132,7 +132,7 @@
           <!-- ./col -->
           <!-- ./col -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 10a-N</b></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku10a19') ?>"><b>IKU 10a-N</b></a></div>
             <input type="text" class="knob" value="111.1" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#D4C44E" readonly>
 
@@ -142,7 +142,7 @@
           <!-- ./col -->
           <!-- ./col -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 11a-N</b></div>
+            <div class="knob-label"><a href="<?= base_url('nko2019/iku11a19') ?>"><b>IKU 11a-N</b></a></div>
             <input type="text" class="knob" value="100" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#04EAFF" readonly>
 

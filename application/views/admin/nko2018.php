@@ -25,7 +25,7 @@
 
         <div class="row">
           <div class="col-6 col-md-3 mb-4 text-center">
-            <div class="knob-label"><b>IKU 1a-CP</b></div>
+            <div class="knob-label"><b><a href="<?= base_url('nko2018/iku1a18') ?>">IKU 1a-CP</b></a></div>
             <input type="text" class="knob" value="120" data-min="0" data-max="120" data-width="90"
                    data-height="90" data-fgColor="#3c8dbc" readonly>
 

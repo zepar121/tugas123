@@ -10,7 +10,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Invoice</li>
+              
             </ol>
           </div>
         </div>
@@ -44,13 +44,10 @@
                 <div class="col-sm-12 invoice-col">
                   <h5>Kinerja:</h5>
                     <ul>
-                    <li>Telah dinyatakan lengkap oleh Kejaksaaan Negeri Simeuleu sesuai Surat Kepala Kejaksaan Negeri Simeulue Nomor B- 07/N.1.23/Ft.1/02/2019 (Penyidikan Deni S.)</li>
-                    <li>Telah dinyatakan lengkap oleh Kejaksaaan Negeri Aceh Selatan sesuai Surat Kepala Kejaksaan Negeri Simeulue Nomor B-479/N.1.17/Ft.1/04/2019 (Penyidikan Halimun)
-                    <li>Telah dinyatakan lengkap oleh Kejaksaaan Negeri Simeulue sesuai Surat Kepala Kejaksaan Negeri Simeulue Nomor B-38/L.1.23/Ft.1/09/2019 (Penyidikan Basri)</li>
-                    <li>Realisasi Pada Bulan Desember 90%</li>
-                    <li>Realisasi s.d Bulan Desember 90%</li>
-                    <li>Capaian s.d Bulan Desember 120%</li>
-                    
+                    <li>Banyaknya peredaran BKC HT Ilegal</li>
+                    <li>Realisasi s.d bulan Desember 98,2%</li>
+                    <li>Capaian s.d bulan Desember 120% </li>
+                                        
                       </ul>
                   <h5>Risiko: -</h5>
 
@@ -76,17 +73,17 @@
                     <tbody>
                     <tr>
                       <td>Target</td>
+                      <td>10%</td>
                       <td>30%</td>
-                      <td>40%</td>
-                      <td>50%</td>
-                      <td>70%</td>
+                      <td>60%</td>
+                      <td>75%</td>
                     </tr>
                     <tr>
                       <td>Realisasi</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
+                      <td>65%</td>
+                      <td>86%</td>
+                      <td>114%</td>
+                      <td>98.2%</td>
                     </tr>
                     <tr>
                       <td>Capaian</td>
@@ -103,7 +100,7 @@
               <!-- /.row -->
 
               <!-- Table row -->
-              <h4>Capaian pada tahun 2018</h4>
+              <h4><a href="<?= base_url('') ?>">Capaian pada tahun 2018</a></h4>
               <div class="row">
                 <div class="col-5 table-responsive">
                   <table class="table table-striped">
@@ -126,16 +123,16 @@
                     </tr>
                     <tr>
                       <td>Realisasi</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>100%</td>
                     </tr>
                     <tr>
                       <td>Capaian</td>
-                      <td>120%</td>
-                      <td>120%</td>
-                      <td>120%</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
                       <td>120%</td>
                     </tr>
                     </tbody>
