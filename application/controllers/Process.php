@@ -22,6 +22,8 @@ class Process extends CI_Controller {
 
 	public function sub_main_update(){
 		unset($_POST["files"]);
+
+		$id = $_POST["id"];
 		unset($_POST["id"]);
 
 		$isSuccess = $this->ProcessModel->update($_POST, $id);

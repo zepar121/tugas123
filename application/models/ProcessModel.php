@@ -13,11 +13,10 @@ class ProcessModel extends CI_Model {
 
   function update($data, $id){
 
-	$this->db->set($data);
-	$this->db->where($id);
+	$this->db->where('id', $id);
 	
-	if ($this->db->update("iku")){
-		return 1
+	if ($this->db->update("iku", $data)){
+		return 1;
 	} else {
 		return 0;
 	}
