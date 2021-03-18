@@ -6,9 +6,13 @@ class HomeModel extends CI_Model {
  
     // Select record
     $row = $this->db->get_where('iku', array('main' => $main, 'sub' => $sub))->row();
-    $sub = $row->content;
 
-    return $sub;
+    return $row;
+  }
+
+  function getSubs($main){
+  	$rows = $this->db->get_where('iku', array('main' => $main))->result();
+  	return $rows;
   }
 
 }

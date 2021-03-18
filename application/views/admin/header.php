@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte3/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte3/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte3/plugins/summernote/summernote-bs4.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">

@@ -51,7 +51,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route['(:any)'] = 'Home/main/$1';
+$route['(:any)/process_create'] = 'Process/sub_main_add';
+$route['(:any)/process_delete'] = 'Process/sub_main_delete';
 $route['(:any)/(:any)'] = 'Home/sub/$1/$2';
+$route['(:any)/(:any)/update'] = 'Home/sub_update/$1/$2';
+$route['(:any)/(:any)/process_update'] = 'Process/sub_main_update';
 $route['default_controller'] = 'Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -21,23 +21,57 @@ class Home extends CI_Controller {
 	public function main($id){
 		$this->load->view('base/header');
 		$this->load->view('base/sidebar');
-		$this->load->view("admin/$id");
-		$this->load->view('base/footer');
+
+		if ($id == "create"){
+
+			$this->load->view('main/create');
+
+		} else if ($id == "update"){
+
+			$this->load->view('sub_main/update');
+
+		} else {
+
+			$rows = $this->HomeModel->getSubs($id);
+			$data = array(
+			    'rows' => $rows,
+			    'main' => $id
+			);
+			$this->load->view("main/sub_list", $data);
+			$this->load->view('base/footer');
+		}
 	}
 
 	public function sub($main, $sub){
 		$this->load->view('base/header');
 		$this->load->view('base/sidebar');
 
-		// $this->load->view("admin/$main/$id");
+		if ($sub == "create"){
 
-		$content = $this->HomeModel->getSub($main, $sub);
+			$data = array("main" => $main);
+			$this->load->view('sub_main/create', $data);
+
+		} else {
+
+			$row = $this->HomeModel->getSub($main, $sub);
+			$data = array(
+			    'row' => $row
+			);
+
+			$this->load->view('sub_main/read', $data);
+			$this->load->view('base/footer');
+		}
+	}
+
+	public function sub_update($main, $sub){
+		$this->load->view('base/header');
+		$this->load->view('base/sidebar');
+
+		$row = $this->HomeModel->getSub($main, $sub);
 		$data = array(
-		    'content' => $content
+		    'row' => $row
 		);
-
-		$this->load->view('admin/sub', $data);
-		$this->load->view('base/footer');
+		$this->load->view('sub_main/update', $data);
 	}
 
 }
