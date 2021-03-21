@@ -9,7 +9,12 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte3/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte3/dist/css/adminlte.min.css">
+  <!-- Editor -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte3/plugins/summernote/summernote-bs4.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte3/plugins/sweetalert2/sweetalert2.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte3/plugins/toastr/toastr.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">

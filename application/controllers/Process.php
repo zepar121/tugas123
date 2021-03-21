@@ -11,27 +11,46 @@ class Process extends CI_Controller {
 	}
 
 	public function sub_main_add(){
+		$data = array();
+
+		$judul_tabel = $_POST["judul_tabel"];
+		$data_tabel = $_POST["tabel"];
+		
+		unset($_POST["judul_tabel"]);
+		unset($_POST["tabel"]);
 		unset($_POST["files"]);
 
-		$inserted_id = $this->ProcessModel->add($_POST);
+		$inserted_id_iku = $this->ProcessModel->add($_POST);
+		$this->ProcessModel->addTabel($inserted_id_iku, $judul_tabel, $data_tabel);
+		
+		$data["success"] = true;
+		$data["message"] = "Data berhasil ditambah";
 
-		echo "Data berhasil ditambah";
-
-		header("refresh:2; url=" . base_url($_POST['main']));
+		echo json_encode($data);
 	}
 
 	public function sub_main_update(){
+		$data = array();
+
+		$judul_tabel = $_POST["judul_tabel"];
+		$data_tabel = $_POST["tabel"];
+		
+		unset($_POST["judul_tabel"]);
+		unset($_POST["tabel"]);
 		unset($_POST["files"]);
 
 		$id = $_POST["id"];
 		unset($_POST["id"]);
 
 		$isSuccess = $this->ProcessModel->update($_POST, $id);
+		$this->ProcessModel->updateTabel($id, $judul_tabel, $data_tabel);
 
 		if ($isSuccess){
-			echo "Data berhasil diubah";
-			header("refresh:2; url=" . base_url($_POST['main']));
+			$data["success"] = true;
+			$data["message"] = "Data berhasil diubah";
 		}
+
+		echo json_encode($data);
 	}
 
 }

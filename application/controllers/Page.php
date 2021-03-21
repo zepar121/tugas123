@@ -1,0 +1,99 @@
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+
+class Page extends CI_Controller
+{
+
+	public function __construct()
+	{
+		parent::__construct();
+
+		// Load model
+		$this->load->model('PageModel');
+	}
+
+	public function index()
+	{
+		$this->load->view('base/header');
+		$this->load->view('base/sidebar');
+		$this->load->view('admin/dashboard');
+		$this->load->view('base/footer');
+	}
+
+	public function main($id)
+	{
+		$this->load->view('base/header');
+		$this->load->view('base/sidebar');
+
+		if ($id == "create") {
+
+			// Create
+			$this->load->view('main/create');
+		} else if ($id == "update") {
+
+			$this->load->view('sub_main/update');
+		} else {
+
+			// Read
+			$rows = $this->PageModel->getSubs($id);
+			$data = array(
+				'rows' => $rows,
+				'main' => $id
+			);
+			$this->load->view("main/sub_list", $data);
+			$this->load->view('base/footer');
+		}
+	}
+
+	public function sub($main, $sub)
+	{
+		$this->load->view('base/header');
+		$this->load->view('base/sidebar');
+
+		if ($sub == "create") {
+
+			// Create
+			$data = array("main" => $main);
+			$this->load->view('sub_main/create', $data);
+		} else {
+
+			// Read
+			$row = $this->PageModel->getSub($main, $sub);
+			$data_tabel = $this->PageModel->getTabel($main, $sub);
+			$data = array(
+				"row" => $row,
+				"data_tabel" => $data_tabel
+			);
+
+			$this->load->view('sub_main/read', $data);
+			$this->load->view('base/footer');
+		}
+	}
+
+	public function main_update($main)
+	{
+		$this->load->view('base/header');
+		$this->load->view('base/sidebar');
+
+		$row = $this->PageModel->getMain($main);
+		$data = array(
+			'row' => $row
+		);
+		$this->load->view('main/update', $data);
+	}
+
+	public function sub_update($main, $sub)
+	{
+		$this->load->view('base/header');
+		$this->load->view('base/sidebar');
+
+		$row = $this->PageModel->getSub($main, $sub);
+		$data_tabel = $this->PageModel->getTabel($main, $sub);
+		$data = array(
+			"row" => $row,
+			"data_tabel" => $data_tabel
+		);
+
+		$this->load->view('sub_main/update', $data);
+	}
+}

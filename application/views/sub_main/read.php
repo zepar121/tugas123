@@ -11,7 +11,7 @@
             <ol class="breadcrumb float-sm-right">
               <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Invoice</li> -->
-              <a href="<?= base_url("{$row->main}/{$row->sub}/update") ?>" type="button" class="btn btn-primary"> Update <i class="fas fa-plus"></i></a>
+              <a href="<?= base_url("{$row->main}/{$row->sub}/update") ?>" type="button" class="btn btn-primary"> Ubah <i class="fas fa-plus"></i></a>
             </ol>
           </div>
         </div>
@@ -51,7 +51,7 @@
               <!-- /.row -->
 
               <!-- Table row -->
-              <h4>Capaian pada tahun 2019</h4>
+              <h4><?= $data_tabel["judul_tabel"] ?></h4>
               <div class="row">
                 <div class="col-5 table-responsive">
                   <table class="table table-striped">
@@ -67,24 +67,24 @@
                     <tbody>
                     <tr>
                       <td>Target</td>
-                      <td>30%</td>
-                      <td>40%</td>
-                      <td>50%</td>
-                      <td>70%</td>
+                      <td><?= $data_tabel["target"]["Q1"] ?>%</td>
+                      <td><?= $data_tabel["target"]["Q2"] ?>%</td>
+                      <td><?= $data_tabel["target"]["Q3"] ?>%</td>
+                      <td><?= $data_tabel["target"]["Q4"] ?>%</td>
                     </tr>
                     <tr>
                       <td>Realisasi</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
+                      <td><?= $data_tabel["realisasi"]["Q1"] ?>%</td>
+                      <td><?= $data_tabel["realisasi"]["Q2"] ?>%</td>
+                      <td><?= $data_tabel["realisasi"]["Q3"] ?>%</td>
+                      <td><?= $data_tabel["realisasi"]["Q4"] ?>%</td>
                     </tr>
                     <tr>
                       <td>Capaian</td>
-                      <td>120%</td>
-                      <td>120%</td>
-                      <td>120%</td>
-                      <td>120%</td>
+                      <td><?= $data_tabel["capaian"]["Q1"] ?>%</td>
+                      <td><?= $data_tabel["capaian"]["Q2"] ?>%</td>
+                      <td><?= $data_tabel["capaian"]["Q3"] ?>%</td>
+                      <td><?= $data_tabel["capaian"]["Q4"] ?>%</td>
                     </tr>
                     </tbody>
                   </table>
@@ -92,50 +92,6 @@
                 <!-- /.col -->
               </div>
               <!-- /.row -->
-
-              <!-- Table row -->
-              <h4>Capaian pada tahun 2018</h4>
-              <div class="row">
-                <div class="col-5 table-responsive">
-                  <table class="table table-striped">
-                    <thead>
-                    <tr>
-                      <th>T/R/C</th>
-                      <th>Q1</th>
-                      <th>Q2</th>
-                      <th>Q3</th>
-                      <th>Q4</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td>Target</td>
-                      <td>30%</td>
-                      <td>40%</td>
-                      <td>50%</td>
-                      <td>70%</td>
-                    </tr>
-                    <tr>
-                      <td>Realisasi</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                      <td>90%</td>
-                    </tr>
-                    <tr>
-                      <td>Capaian</td>
-                      <td>120%</td>
-                      <td>120%</td>
-                      <td>120%</td>
-                      <td>120%</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.col -->
-              </div>
-              <!-- /.row -->
-
               
             </div>
             <!-- /.invoice -->
