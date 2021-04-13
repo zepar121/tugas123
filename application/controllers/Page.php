@@ -55,14 +55,16 @@ class Page extends CI_Controller
 			// Create
 			$data = array("main" => $main);
 			$this->load->view('sub_main/create', $data);
+			
 		} else {
 
 			// Read
 			$row = $this->PageModel->getSub($main, $sub);
-			$data_tabel = $this->PageModel->getTabel($main, $sub);
+			$tabel_list = $this->PageModel->getTabelList($main, $sub);
+
 			$data = array(
 				"row" => $row,
-				"data_tabel" => $data_tabel
+				"tabel_list" => $tabel_list
 			);
 
 			$this->load->view('sub_main/read', $data);
@@ -89,9 +91,13 @@ class Page extends CI_Controller
 
 		$row = $this->PageModel->getSub($main, $sub);
 		$data_tabel = $this->PageModel->getTabel($main, $sub);
+		$tabel_list = $this->PageModel->getTabelList($main, $sub);
+		array_shift($tabel_list);
+
 		$data = array(
 			"row" => $row,
-			"data_tabel" => $data_tabel
+			"data_tabel" => $data_tabel,
+			"tabel_list" => $tabel_list
 		);
 
 		$this->load->view('sub_main/update', $data);

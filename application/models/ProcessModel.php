@@ -11,6 +11,66 @@ class ProcessModel extends CI_Model
 		return ($this->db->trans_status()) ? $this->db->insert_id() : false;
 	}
 
+	function addTabelLain($id_iku, $tabel_lain_list)
+	{
+		foreach ($tabel_lain_list as $item) {
+			$id_tabel = $item["id_tabel"];
+			$main_iku = $item["main"];
+
+			$data = array(
+				"id_iku" => $id_iku,
+				"id_tabel" => $id_tabel,
+				"main_iku" => $main_iku
+			);
+			$this->db->insert('referensi_tabel', $data);
+		}
+	}
+
+	function updateTabelLain($id_iku, $tabel_lain_list)
+	{
+		$rows = $this->db->query("select * from referensi_tabel where id_iku=$id_iku")->result();
+		
+		// Jangan ubah ubah tabelnya sendiri di row 1
+		array_shift($rows);
+
+		foreach ($rows as $row) {
+			if (count($tabel_lain_list) > 0){
+				$first = array_shift($tabel_lain_list);
+				$id_tabel = $first["id_tabel"];
+				$main_iku = $first["main"];
+				
+				$this->db->where('id', $row->id);
+				$data = array(
+					"id_tabel" => $id_tabel,
+					"main_iku" => $main_iku
+				);
+				$this->db->update("referensi_tabel", $data);
+			} else {
+				// Enggak dihapus, cuma dikosongkan aja
+				$this->db->where('id', $row->id);
+				$data = array(
+					"id_tabel" => "-1",
+					"main_iku" => "-1"
+				);
+				$this->db->update("referensi_tabel", $data);
+			}
+		}
+
+		foreach ($tabel_lain_list as $item) {
+			$id_tabel = $item["id_tabel"];
+			$main_iku = $item["main"];
+
+			$data = array(
+				"id_iku" => $id_iku,
+				"id_tabel" => $id_tabel,
+				"main_iku" => $main_iku
+			);
+			$this->db->insert('referensi_tabel', $data);
+		}
+
+		return 1;
+	}
+
 	function addTabel($id_iku, $judul_tabel, $data_tabel)
 	{
 
@@ -23,10 +83,13 @@ class ProcessModel extends CI_Model
 		$this->db->insert('tabel', $data);
 
 		$inserted_id = ($this->db->trans_status()) ? $this->db->insert_id() : false;
+		$row = $this->db->get_where('iku', array('id' => $id_iku))->row();
+		$main_iku = $row->main;
 
 		$data = array(
 			"id_iku" => $id_iku,
-			"id_tabel" => $inserted_id
+			"id_tabel" => $inserted_id,
+			"main_iku" => $main_iku
 		);
 		$this->db->insert('referensi_tabel', $data);
 

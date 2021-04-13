@@ -103,6 +103,13 @@
                   <!-- /.col -->
                 </div>
                 <!-- /.row -->
+
+                <div id="tabel_lain">
+
+                </div>
+
+                <a id="btn_tambah_tabel" type="button" class="btn btn-primary"> Tambah Tabel <i class="fas fa-plus"></i></a>
+
                 <form>
             </div>
             <!-- /.card-body -->
@@ -152,6 +159,98 @@
   <!-- Toastr -->
   <script src="<?php echo base_url(); ?>assets/adminlte3/plugins/toastr/toastr.min.js"></script>
   <script>
+    var main_list = new Array();
+    var id = -1;
+
+    // process the form
+    $.ajax({
+        type: 'POST',
+        url: "<?= base_url("Data/getMainList") ?>",
+        dataType: 'json', // what type of data do we expect back from the serverss
+        processData: false,
+        contentType: false,
+        cache: false,
+        async: false,
+        error: function(data) {
+          alert("AJAX ERROR")
+          alert(JSON.stringify(data));
+        }
+      })
+      // using the done promise callback
+      .done(function(data) {
+
+        data.forEach(function(value, index, array) {
+          main_list.push(value);
+        })
+
+      });
+
+    $("#btn_tambah_tabel").click(function() {
+      ++id;
+
+      var main_option_list = "";
+      main_list.forEach(function(value, index, array) {
+        main_option_list += '<option value="' + value.main + '">' + value.judul + '</option>';
+      });
+
+      $("#tabel_lain").append(
+        '\
+        <div id="tabel-' + id + '" class="row py-3">\
+          <div class="col-5 px-0">\
+            <select name="tabel_lain[' + id + '][main]" onchange="getTableList(this, ' + id + ')" class="form-control" data-main="main-' + id + '">\
+            <option value="">Pilih...</option>' + main_option_list + '</select>\
+          </div>\
+          <div class="col-5 px-0">\
+            <select name="tabel_lain[' + id + '][id_tabel]" class="form-control" data-tabel-id="sub-' + id + '">\
+            </select>\
+          </div>\
+          <div class="col-2 px-0">\
+            <button type="button" onClick="hapusItemTabel(this, ' + id + ')" class="btn btn-danger"><i class="fas fa-trash"></i></button>\
+          </div>\
+        </div>'
+      );
+    });
+
+    function hapusItemTabel(btnObject, id) {
+      $("#tabel-" + id).remove();
+    }
+
+    function getTableList(selectObject, id) {
+      $("select[data-tabel-id=sub-" + id + "]").find('option').remove().end();
+
+      var value = "";
+
+      if (selectObject instanceof jQuery) {
+        value = selectObject.val();
+      } else {
+        value = selectObject.value;
+      }
+
+      if (value == "") return;
+
+      $.ajax({
+          type: 'POST',
+          url: "<?= base_url("Data/getSubMainTableList/") ?>" + value,
+          dataType: 'json', // what type of data do we expect back from the serverss
+          processData: false,
+          contentType: false,
+          cache: false,
+          async: false,
+          error: function(data) {
+            alert("AJAX ERROR")
+            alert(JSON.stringify(data));
+          }
+        })
+        // using the done promise callback
+        .done(function(data) {
+
+          for (var index = 0; index <= data.length; index++) {
+            $("select[data-tabel-id=sub-" + id + "]").append('<option value="' + data[index].id_tabel + '">' + data[index].nama_iku + " - " + data[index].judul_tabel + '</option>');
+          }
+
+        });
+    }
+
     $(function() {
       // Summernote
       $('.textarea').summernote({
@@ -188,12 +287,13 @@
       // alert(JSON.stringify(formData));
 
       var formUrl = "<?= base_url("{$row->main}/{$row->sub}/process_update") ?>";
+      var data = new FormData(this);
 
       // process the form
       $.ajax({
           type: 'POST',
           url: formUrl,
-          data: new FormData(this), //penggunaan FormData
+          data: data, //penggunaan FormData
           dataType: 'json', // what type of data do we expect back from the serverss
           processData: false,
           contentType: false,
@@ -231,6 +331,20 @@
           }
         });
     });
+
+    <?php
+    $id = -1;
+    ?>
+    <?php foreach ($tabel_list as $tabel) : ?>
+      setTimeout(function() {
+        $("#btn_tambah_tabel").trigger("click");
+        <?php ++$id ?>
+        var obj = $("select[data-main=main-<?= $id ?>]");
+        obj.val("<?= $tabel["main_iku"] ?>")
+        getTableList(obj, <?= $id ?>)
+      }, 50 * <?= $id + 1 ?>);
+
+    <?php endforeach; ?>
   </script>
   </body>
 
