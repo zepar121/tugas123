@@ -66,37 +66,19 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-user-circle"></i>
               <p>
                 PPI
-                
+
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-calendar-check"></i>
               <p>
                 PKPT
-                
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                ABK
-                
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                LAKIN
-                
+
               </p>
             </a>
           </li>
@@ -104,8 +86,26 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
+                ABK
+
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-thumbs-up"></i>
+              <p>
+                LAKIN
+
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-question-circle"></i>
+              <p>
                 SOP
-                
+
               </p>
             </a>
           </li>
@@ -114,11 +114,11 @@
               <i class="nav-icon fas fa-power-off"></i>
               <p>
                 Keluar
-                
+
               </p>
             </a>
           </li>
-          
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

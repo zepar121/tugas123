@@ -41,10 +41,9 @@
             <!-- info row -->
             <div class="row invoice-info">
               <div class="col-sm-12 invoice-col">
-                <h5>Kinerja:</h5>
+                
                 <?= $row->isi_sub_judul ?>
 
-                <h5>Risiko: -</h5>
               </div>
 
             </div>
