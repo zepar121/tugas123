@@ -45,7 +45,7 @@
                 <?= $row->isi_sub_judul ?>
 
               </div>
-
+              
             </div>
             <!-- /.row -->
 

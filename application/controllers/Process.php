@@ -15,12 +15,12 @@ class Process extends CI_Controller {
 
 		$judul_tabel = $_POST["judul_tabel"];
 		$data_tabel = $_POST["tabel"];
-		$tabel_lain = $_POST["tabel_lain"];
+		$tabel_lain = $_POST["tabel_lain"] ?? array();
 		
 		unset($_POST["judul_tabel"]);
 		unset($_POST["tabel"]);
 		unset($_POST["files"]);
-		unset($_POST["tabel_lain"]);
+		if (isset($_POST["tabel_lain"])) unset($_POST["tabel_lain"]);
 
 		$inserted_id_iku = $this->ProcessModel->add($_POST);
 		$this->ProcessModel->addTabel($inserted_id_iku, $judul_tabel, $data_tabel);
