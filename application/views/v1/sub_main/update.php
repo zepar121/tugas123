@@ -165,7 +165,7 @@
     // process the form
     $.ajax({
         type: 'POST',
-        url: "<?= base_url("Data/getMainList") ?>",
+        url: "<?= base_url("v1/Data/getMainList") ?>",
         dataType: 'json', // what type of data do we expect back from the serverss
         processData: false,
         contentType: false,
@@ -230,7 +230,7 @@
 
       $.ajax({
           type: 'POST',
-          url: "<?= base_url("Data/getSubMainTableList/") ?>" + value,
+          url: "<?= base_url("v1/Data/getSubMainTableList/") ?>" + value,
           dataType: 'json', // what type of data do we expect back from the serverss
           processData: false,
           contentType: false,

@@ -50,15 +50,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-$route['Data/(:any)'] = 'Data/$1';
+# Version 2
+$route['v2'] = 'v2/Page';
+$route['v2/Data/(:any)'] = 'v2/Data/$1';
+$route['v2/(:any)'] = 'v2/Page/main/$1';
+$route['v2/(:any)/process_create'] = 'v2/Process/sub_main_add';
+$route['v2/(:any)/process_delete'] = 'v2/Process/sub_main_delete';
+$route['v2/(:any)/(:any)'] = 'v2/Page/sub/$1/$2';
+$route['v2/(:any)/(:any)/update'] = 'v2/Page/sub_update/$1/$2';
+$route['v2/(:any)/(:any)/process_update'] = 'v2/Process/sub_main_update';
 
-$route['(:any)'] = 'Page/main/$1';
-$route['(:any)/process_create'] = 'Process/sub_main_add';
-$route['(:any)/process_delete'] = 'Process/sub_main_delete';
-$route['(:any)/(:any)'] = 'Page/sub/$1/$2';
-$route['(:any)/(:any)/update'] = 'Page/sub_update/$1/$2';
-$route['(:any)/(:any)/process_update'] = 'Process/sub_main_update';
+# Version 3
+$route['v3'] = 'v3/Page';
+$route['v3/Data/(:any)'] = 'v3/Data/$1';
+$route['v3/(:any)'] = 'v3/Page/main/$1';
+$route['v3/(:any)/process_create'] = 'v3/Process/sub_main_add';
+$route['v3/(:any)/process_delete'] = 'v3/Process/sub_main_delete';
+$route['v3/(:any)/(:any)'] = 'v3/Page/sub/$1/$2';
+$route['v3/(:any)/(:any)/update'] = 'v3/Page/sub_update/$1/$2';
+$route['v3/(:any)/(:any)/process_update'] = 'v3/Process/sub_main_update';
 
-$route['default_controller'] = 'Page';
+# Version 1
+$route['Data/(:any)'] = 'v1/Data/$1';
+$route['(:any)'] = 'v1/Page/main/$1';
+$route['(:any)/process_create'] = 'v1/Process/sub_main_add';
+$route['(:any)/process_delete'] = 'v1/Process/sub_main_delete';
+$route['(:any)/(:any)'] = 'v1/Page/sub/$1/$2';
+$route['(:any)/(:any)/update'] = 'v1/Page/sub_update/$1/$2';
+$route['(:any)/(:any)/process_update'] = 'v1/Process/sub_main_update';
+
+
+$route['default_controller'] = 'v1/Page';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

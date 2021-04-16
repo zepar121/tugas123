@@ -45,19 +45,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./" class="nav-link active">
+                <a href="<?= base_url() ?>" class="nav-link <?= !in_array($this->uri->segment(1), array("v1", "v2")) ? "active" : "" ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v1</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="<?= base_url("v2") ?>" class="nav-link  <?= $this->uri->segment(1) == "v2" ? "active" : "" ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v2</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="<?= base_url("v3") ?>" class="nav-link  <?= $this->uri->segment(1) == "v3" ? "active" : "" ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v3</p>
                 </a>
