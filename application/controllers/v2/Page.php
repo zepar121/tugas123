@@ -16,8 +16,8 @@ class Page extends CI_Controller
 	{
 		$this->load->view("base/header");
 		$this->load->view("base/sidebar");
-		$this->load->view("admin/dashboard");
-		$this->load->view("base/footer");
+		$this->load->view("v2/dashboard");
+		$this->load->view("base/v2/footer");
 	}
 
 	public function main($id)
@@ -41,7 +41,7 @@ class Page extends CI_Controller
 				"main" => $id
 			);
 			$this->load->view("v2/main/sub_list", $data);
-			$this->load->view("base/footer");
+			$this->load->view("base/v2/footer");
 		}
 	}
 
@@ -68,7 +68,7 @@ class Page extends CI_Controller
 			);
 
 			$this->load->view("v2/sub_main/read", $data);
-			$this->load->view("base/footer");
+			$this->load->view("base/v2/footer");
 		}
 	}
 

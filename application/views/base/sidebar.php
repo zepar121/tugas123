@@ -45,7 +45,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url() ?>" class="nav-link <?= !in_array($this->uri->segment(1), array("v1", "v2")) ? "active" : "" ?>">
+                <a href="<?= base_url() ?>" class="nav-link <?= !in_array($this->uri->segment(1), array("v2", "v3")) ? "active" : "" ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v1</p>
                 </a>
