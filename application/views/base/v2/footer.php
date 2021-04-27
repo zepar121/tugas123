@@ -99,7 +99,7 @@
     
 
     var areaChartData = {
-      labels  : ['1a-N', '2a-N', '3a-N', '4a-N', '5a-N', '6a-N', '7a-N', '8a-N', '9a-N', '10a-N', '11a-N'],
+      labels  : ['1a-N', '2a-CP', '3a-CP', '4a-N', '5a-N', '6a-N', '6b-N', '7a-N', '8a-N', '8b-N', '9a-N', '9b-N', '9c-N', '10a-N', '11a-CP'],
       datasets: [
         {
           label               : '2019',
@@ -110,7 +110,7 @@
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [100, 120, 90, 100, 100, 120, 90, 100, 100, 120, 90, 0]
+          data                : [0, 0, 105.02, 110.74, 0, 110.03, 117.38, 0, 117.64, 0, 120, 0, 0, 0, 100.06]
         },
         {
           label               : '2018',
@@ -121,7 +121,7 @@
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [100, 120, 90, 100, 100, 120, 90, 100, 100, 120, 90, 0]
+          data                : [102.3, 0, 117.26, 0, 0, 109.99, 118, 0, 120, 0, 120, 0, 0, 0, 87.62]
         },
         {
           label               : '2020',
@@ -132,7 +132,7 @@
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [100, 120, 90, 100, 100, 120, 90, 100, 100, 120, 90, 0]
+          data                : [120, 120, 108.18, 106.38, 120, 117.57, 118.64, 120, 111.11, 0, 120, 114.62, 0, 120, 102.87]
         },
         {
           label               : '2021',
@@ -143,7 +143,7 @@
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [100, 120, 90, 100, 100, 120, 90, 100, 100, 120, 90, 0]
+          data                : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         },
       ]
     }
