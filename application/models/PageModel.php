@@ -24,7 +24,12 @@ class PageModel extends CI_Model
 
   function getSubs($main)
   {
-    $rows = $this->db->get_where('iku', array('main' => $main))->result();
+    $rows = $this->db->query("SELECT * FROM iku
+    INNER JOIN (
+      SELECT id_iku, main_iku, id_tabel FROM referensi_tabel GROUP BY id_iku
+    ) rt ON iku.id = rt.id_iku
+    INNER JOIN tabel t ON rt.id_tabel = t.id 
+    WHERE iku.main='$main'")->result();
     return $rows;
   }
 
