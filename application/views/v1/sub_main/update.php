@@ -165,7 +165,7 @@
     // process the form
     $.ajax({
         type: 'POST',
-        url: "<?= base_url("v1/Data/getMainList") ?>",
+        url: "<?= base_url("v2/Data/getMainList") ?>",
         dataType: 'json', // what type of data do we expect back from the serverss
         processData: false,
         contentType: false,
@@ -211,11 +211,11 @@
       );
     });
 
-    function hapusItemTabel(btnObject, id) {
+    function hapusItemTabel(btnObject, id, selectedValue = "") {
       $("#tabel-" + id).remove();
     }
 
-    function getTableList(selectObject, id) {
+    function getTableList(selectObject, id, selectedValue = "") {
       $("select[data-tabel-id=sub-" + id + "]").find('option').remove().end();
 
       var value = "";
@@ -230,7 +230,7 @@
 
       $.ajax({
           type: 'POST',
-          url: "<?= base_url("v1/Data/getSubMainTableList/") ?>" + value,
+          url: "<?= base_url("v2/Data/getSubMainTableList/") ?>" + value,
           dataType: 'json', // what type of data do we expect back from the serverss
           processData: false,
           contentType: false,
@@ -244,8 +244,12 @@
         // using the done promise callback
         .done(function(data) {
 
-          for (var index = 0; index <= data.length; index++) {
-            $("select[data-tabel-id=sub-" + id + "]").append('<option value="' + data[index].id_tabel + '">' + data[index].nama_iku + " - " + data[index].judul_tabel + '</option>');
+          data.forEach(function(item) {
+            $("select[data-tabel-id=sub-" + id + "]").append('<option value="' + item.id_tabel + '">' + item.nama_iku + " - " + item.judul_tabel + '</option>');
+          });
+
+          if (selectedValue != "") {
+            $("select[data-tabel-id=sub-" + id + "]").val(selectedValue);
           }
 
         });
@@ -340,10 +344,9 @@
         $("#btn_tambah_tabel").trigger("click");
         <?php ++$id ?>
         var obj = $("select[data-main=main-<?= $id ?>]");
-        obj.val("<?= $tabel["main_iku"] ?>")
-        getTableList(obj, <?= $id ?>)
+        obj.val("<?= $tabel["main_iku"] ?>");
+        getTableList(obj, <?= $id ?>, "<?= $tabel["id_tabel"] ?>");
       }, 50 * <?= $id + 1 ?>);
-
     <?php endforeach; ?>
   </script>
   </body>

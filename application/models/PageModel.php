@@ -88,6 +88,7 @@ class PageModel extends CI_Model
       $data_tabel = array(
         "judul_tabel" => $row->judul_tabel,
         "main_iku" => $row->main_iku,
+        "id_tabel" => $row->id_tabel,
         "target" => array(
           "Q1" => $explode_target[0],
           "Q2" => $explode_target[1],
