@@ -35,21 +35,14 @@ class Process extends CI_Controller {
 	public function sub_main_update(){
 		$data = array();
 
-		$judul_tabel = $_POST["judul_tabel"];
-		$data_tabel = $_POST["tabel"];
 		$tabel_lain = $_POST["tabel_lain"] ?? array();
-		
-		unset($_POST["judul_tabel"]);
-		unset($_POST["tabel"]);
-		unset($_POST["files"]);
+
 		if (isset($_POST["tabel_lain"])) unset($_POST["tabel_lain"]);
 
 		$id = $_POST["id"];
 		unset($_POST["id"]);
 
-		$isSuccess = $this->ProcessModel->update($_POST, $id);
-		$this->ProcessModel->updateTabel($id, $judul_tabel, $data_tabel);
-		$this->ProcessModel->updateTabelLain($id, $tabel_lain);
+		$isSuccess = $this->ProcessModel->updateV2Pair($id, $tabel_lain);
 
 		if ($isSuccess){
 			$data["success"] = true;

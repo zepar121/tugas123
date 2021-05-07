@@ -60,7 +60,7 @@ class Page extends CI_Controller
 
 			// Read
 			$row = $this->PageModel->getSub($main, $sub);
-			$tabel_list = $this->PageModel->getTabelList($main, $sub);
+			$tabel_list = $this->PageModel->getV2Pair($main, $sub);
 
 			$data = array(
 				"row" => $row,
@@ -91,8 +91,7 @@ class Page extends CI_Controller
 
 		$row = $this->PageModel->getSub($main, $sub);
 		$data_tabel = $this->PageModel->getTabel($main, $sub);
-		$tabel_list = $this->PageModel->getTabelList($main, $sub);
-		array_shift($tabel_list);
+		$tabel_list = $this->PageModel->getV2Pair($main, $sub);
 
 		$data = array(
 			"row" => $row,

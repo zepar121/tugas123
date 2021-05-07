@@ -14,6 +14,63 @@
            </ol>
          </div>
        </div>
+
+       <!-- Small boxes (Stat box) -->
+       <div class="row">
+         <div class="col-lg-3 col-6">
+           <!-- small box -->
+           <div class="small-box bg-info">
+             <div class="inner">
+               <p>Nilai Kinerja Organisasi 2018</p>
+             </div>
+             <div class="icon">
+               <i class="ion ion-bag"></i>
+             </div>
+             <a href="<?= base_url("v2/nko2018") ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+           </div>
+         </div>
+         <!-- ./col -->
+         <div class="col-lg-3 col-6">
+           <!-- small box -->
+           <div class="small-box bg-success">
+             <div class="inner">
+               <p>Nilai Kinerja Organisasi 2019</p>
+             </div>
+             <div class="icon">
+               <i class="ion ion-stats-bars"></i>
+             </div>
+             <a href="<?= base_url("v2/nko2019") ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+           </div>
+         </div>
+         <!-- ./col -->
+         <div class="col-lg-3 col-6">
+           <!-- small box -->
+           <div class="small-box bg-warning">
+             <div class="inner">
+               <p>Nilai Kinerja Organisasi 2020</p>
+             </div>
+             <div class="icon">
+               <i class="ion ion-person-add"></i>
+             </div>
+             <a href="<?= base_url("v2/nko2020") ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+           </div>
+         </div>
+         <!-- ./col -->
+         <div class="col-lg-3 col-6">
+           <!-- small box -->
+           <div class="small-box bg-danger">
+             <div class="inner">
+               <p>Nilai Kinerja Organisasi 2021</p>
+             </div>
+             <div class="icon">
+               <i class="ion ion-pie-graph"></i>
+             </div>
+             <a href="<?= base_url("v2/nko2021") ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+           </div>
+         </div>
+         <!-- ./col -->
+       </div>
+       <!-- /.row -->
      </div>
    </section>
 

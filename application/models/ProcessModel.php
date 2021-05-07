@@ -26,19 +26,38 @@ class ProcessModel extends CI_Model
 		}
 	}
 
+	function updateV2Pair($id_iku, $tabel_lain_list)
+	{
+		$combine = array();
+
+		foreach ($tabel_lain_list["main"] as $key => $value){
+			array_push($combine, $tabel_lain_list["main"][$key] . "-" . $tabel_lain_list["sub"][$key]);
+		}
+
+		$value = join("#", $combine);
+
+		$this->db->where('id', $id_iku);
+		$data = array(
+			"v2_pairs" => $value
+		);
+		$this->db->update("iku", $data);
+
+		return 1;
+	}
+
 	function updateTabelLain($id_iku, $tabel_lain_list)
 	{
 		$rows = $this->db->query("select * from referensi_tabel where id_iku=$id_iku")->result();
-		
+
 		// Jangan ubah ubah tabelnya sendiri di row 1
 		array_shift($rows);
 
 		foreach ($rows as $row) {
-			if (count($tabel_lain_list) > 0){
+			if (count($tabel_lain_list) > 0) {
 				$first = array_shift($tabel_lain_list);
 				$id_tabel = $first["id_tabel"];
 				$main_iku = $first["main"];
-				
+
 				$this->db->where('id', $row->id);
 				$data = array(
 					"id_tabel" => $id_tabel,

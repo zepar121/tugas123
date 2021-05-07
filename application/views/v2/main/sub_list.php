@@ -11,7 +11,7 @@
             <ol class="breadcrumb float-sm-right">
               <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Dashboard</li> -->
-              <a href="<?= base_url("$main/create") ?>" type="button" class="btn btn-primary"> Tambah <i class="fas fa-plus"></i></a>
+              <!-- <a href="<?= base_url("v2/$main/create") ?>" type="button" class="btn btn-primary"> Tambah <i class="fas fa-plus"></i></a> -->
             </ol>
           </div>
         </div>
@@ -25,7 +25,7 @@
         <div class="row">
 	    	<?php foreach($rows as $row): ?>
 				<div class="col-6 col-md-3 mb-4 text-center">
-				<div class="knob-label"><b><a href='<?= base_url($row->main ."/". $row->sub) ?>'><?= $row->nama_iku ?></b></a></div>
+				<div class="knob-label"><b><a href='<?= base_url("v2/" . $row->main ."/". $row->sub) ?>'><?= $row->nama_iku ?></b></a></div>
 				<input type="text" class="knob" value="120" data-min="0" data-max="120" data-width="90"
 				       data-height="90" data-fgColor="#3c8dbc" readonly>
 
