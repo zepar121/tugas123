@@ -17,6 +17,24 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte3/plugins/sweetalert2/sweetalert2.min.css">
   <!-- Toastr -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte3/plugins/toastr/toastr.min.css">
+  <style>
+    /* Style the buttons */
+    .btn-chart {
+      border: none;
+      outline: none;
+      padding: 10px 16px;
+      background-color: #f1f1f1;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    /* Style the active class, and buttons on mouse-over */
+    .active-btn-chart,
+    .btn-chart:hover {
+      background-color: #1a73e8;
+      color: white;
+    }
+  </style>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

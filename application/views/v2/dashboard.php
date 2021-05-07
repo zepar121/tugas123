@@ -39,6 +39,10 @@
                </div>
              </div>
              <div class="card-body">
+               <div id="myDIV" class="mb-3">
+                 <button class="btn-chart active-btn-chart" onClick="changeData(0)">Capaian</button>
+                 <button class="btn-chart" onClick="changeData(1)">Realisasi</button>
+               </div>
                <div class="chart">
                  <canvas id="barChart" style="min-height: 400px; height: 400px; max-height: 400px; max-width: 100%;"></canvas>
                </div>

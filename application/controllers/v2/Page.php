@@ -17,7 +17,11 @@ class Page extends CI_Controller
 		$this->load->view("base/header");
 		$this->load->view("base/sidebar");
 		$this->load->view("v2/dashboard");
-		$this->load->view("base/v2/footer");
+		$data_grafik = $this->PageModel->getDataGrafikV2();
+		$data = array(
+			"data_grafik" => $data_grafik
+		);
+		$this->load->view("base/v2/footer", $data);
 	}
 
 	public function main($id)

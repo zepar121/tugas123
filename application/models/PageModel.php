@@ -33,6 +33,88 @@ class PageModel extends CI_Model
     return $rows;
   }
 
+  function getDataGrafikV2()
+  {
+    $data_grafik = array();
+    array_push($data_grafik, array(
+      "kategori" => "capaian",
+      "data" => array(
+        "nko2018" => array(),
+        "nko2019" => array(),
+        "nko2020" => array(),
+        "nko2021" => array()
+      )
+    ));
+    array_push($data_grafik, array(
+      "kategori" => "realisasi",
+      "data" => array(
+        "nko2018" => array(),
+        "nko2019" => array(),
+        "nko2020" => array(),
+        "nko2021" => array()
+      )
+    ));
+
+    $results = $this->db->query("SELECT * FROM iku
+    INNER JOIN (
+      SELECT id_iku, main_iku, id_tabel FROM referensi_tabel GROUP BY id_iku
+    ) rt ON iku.id = rt.id_iku
+    INNER JOIN tabel t ON rt.id_tabel = t.id 
+    WHERE iku.main='nko2021'")->result();
+
+    foreach ($results as $row) {
+      $explode_capaian = explode("#", $row->capaian);
+      $explode_realisasi = explode("#", $row->realisasi);
+      array_push($data_grafik[0]["data"]["nko2021"], $explode_capaian[3]); // capaian [3] -> Q4
+      array_push($data_grafik[1]["data"]["nko2021"], $explode_realisasi[3]); // realisasi [3] -> Q4
+
+
+      $row2018 = $this->db->query("SELECT RT.id_iku, RT.main_iku, RT.id_tabel, t.* FROM referensi_tabel as RT
+      INNER JOIN tabel t ON RT.id_tabel = t.id 
+      WHERE RT.id_iku='{$row->id_iku}' and RT.main_iku='nko2018'")->row();
+
+      if ($row2018 != null) {
+        $explode_capaian = explode("#", $row2018->capaian);
+        $explode_realisasi = explode("#", $row2018->realisasi);
+        array_push($data_grafik[0]["data"]["nko2018"], str_replace(",", ".", $explode_capaian[3])); // capaian [3] -> Q4
+        array_push($data_grafik[1]["data"]["nko2018"], str_replace(",", ".", $explode_realisasi[3])); // realisasi [3] -> Q4
+      } else {
+        array_push($data_grafik[0]["data"]["nko2018"], "0.0"); // capaian [3] -> Q4
+        array_push($data_grafik[1]["data"]["nko2018"], "0.0"); // realisasi [3] -> Q4
+      }
+
+      $row2019 = $this->db->query("SELECT RT.id_iku, RT.main_iku, RT.id_tabel, t.* FROM referensi_tabel as RT
+      INNER JOIN tabel t ON RT.id_tabel = t.id 
+      WHERE RT.id_iku='{$row->id_iku}' and RT.main_iku='nko2019'")->row();
+
+      if ($row2019 != null) {
+        $explode_capaian = explode("#", $row2019->capaian);
+        $explode_realisasi = explode("#", $row2019->realisasi);
+        array_push($data_grafik[0]["data"]["nko2019"], str_replace(",", ".", $explode_capaian[3])); // capaian [3] -> Q4
+        array_push($data_grafik[1]["data"]["nko2019"], str_replace(",", ".", $explode_realisasi[3])); // realisasi [3] -> Q4
+      } else {
+        array_push($data_grafik[0]["data"]["nko2019"], "0.0"); // capaian [3] -> Q4
+        array_push($data_grafik[1]["data"]["nko2019"], "0.0"); // realisasi [3] -> Q4
+      }
+
+      $row2020 = $this->db->query("SELECT RT.id_iku, RT.main_iku, RT.id_tabel, t.* FROM referensi_tabel as RT
+      INNER JOIN tabel t ON RT.id_tabel = t.id 
+      WHERE RT.id_iku='{$row->id_iku}' and RT.main_iku='nko2020'")->row();
+
+      if ($row2020 != null) {
+        $explode_capaian = explode("#", $row2020->capaian);
+        $explode_realisasi = explode("#", $row2020->realisasi);
+        array_push($data_grafik[0]["data"]["nko2020"], str_replace(",", ".", $explode_capaian[3])); // capaian [3] -> Q4
+        array_push($data_grafik[1]["data"]["nko2020"], str_replace(",", ".", $explode_realisasi[3])); // realisasi [3] -> Q4
+      } else {
+        array_push($data_grafik[0]["data"]["nko2020"], "0.0"); // capaian [3] -> Q4
+        array_push($data_grafik[1]["data"]["nko2020"], "0.0"); // realisasi [3] -> Q4
+      }
+    }
+
+    return $data_grafik;
+  }
+
   function getTabel($main, $sub)
   {
     $row = $this->db->get_where('iku', array('main' => $main, 'sub' => $sub))->row();
@@ -69,7 +151,7 @@ class PageModel extends CI_Model
 
     return $data_tabel;
   }
-  
+
   function getTabelList($main, $sub)
   {
     $row = $this->db->get_where('iku', array('main' => $main, 'sub' => $sub))->row();
@@ -111,7 +193,7 @@ class PageModel extends CI_Model
 
       array_push($tabel_list, $data_tabel);
     }
-    
+
     return $tabel_list;
   }
 }
