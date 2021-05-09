@@ -100,17 +100,6 @@
   var areaChartData = {
     labels: ['1a-N', '2a-CP', '3a-CP', '4a-N', '5a-N', '6a-N', '6b-N', '7a-N', '8a-N', '8b-N', '9a-N', '9b-N', '9c-N', '10a-N', '11a-CP'],
     datasets: [{
-        label: '2019',
-        backgroundColor: 'rgba(40,167,69, 1)',
-        borderColor: 'rgba(210, 214, 222, 1)',
-        pointRadius: false,
-        pointColor: 'rgba(210, 214, 222, 1)',
-        pointStrokeColor: '#c1c7d1',
-        pointHighlightFill: '#fff',
-        pointHighlightStroke: 'rgba(220,220,220,1)',
-        data: <?= json_encode($data_grafik[0]["data"]["nko2019"]) ?>
-      },
-      {
         label: '2018',
         backgroundColor: 'rgba(60,141,188,0.9)',
         borderColor: 'rgba(60,141,188,0.8)',
@@ -120,6 +109,17 @@
         pointHighlightFill: '#fff',
         pointHighlightStroke: 'rgba(60,141,188,1)',
         data: <?= json_encode($data_grafik[0]["data"]["nko2018"]) ?>
+      },
+      {
+        label: '2019',
+        backgroundColor: 'rgba(40,167,69, 1)',
+        borderColor: 'rgba(210, 214, 222, 1)',
+        pointRadius: false,
+        pointColor: 'rgba(210, 214, 222, 1)',
+        pointStrokeColor: '#c1c7d1',
+        pointHighlightFill: '#fff',
+        pointHighlightStroke: 'rgba(220,220,220,1)',
+        data: <?= json_encode($data_grafik[0]["data"]["nko2019"]) ?>
       },
       {
         label: '2020',
@@ -150,17 +150,6 @@
   var areaChartData2 = {
     labels: ['1a-N', '2a-CP', '3a-CP', '4a-N', '5a-N', '6a-N', '6b-N', '7a-N', '8a-N', '8b-N', '9a-N', '9b-N', '9c-N', '10a-N', '11a-CP'],
     datasets: [{
-        label: '2019',
-        backgroundColor: 'rgba(40,167,69, 1)',
-        borderColor: 'rgba(210, 214, 222, 1)',
-        pointRadius: false,
-        pointColor: 'rgba(210, 214, 222, 1)',
-        pointStrokeColor: '#c1c7d1',
-        pointHighlightFill: '#fff',
-        pointHighlightStroke: 'rgba(220,220,220,1)',
-        data: <?= json_encode($data_grafik[1]["data"]["nko2019"]) ?>
-      },
-      {
         label: '2018',
         backgroundColor: 'rgba(60,141,188,0.9)',
         borderColor: 'rgba(60,141,188,0.8)',
@@ -170,6 +159,17 @@
         pointHighlightFill: '#fff',
         pointHighlightStroke: 'rgba(60,141,188,1)',
         data: <?= json_encode($data_grafik[1]["data"]["nko2018"]) ?>
+      },
+      {
+        label: '2019',
+        backgroundColor: 'rgba(40,167,69, 1)',
+        borderColor: 'rgba(210, 214, 222, 1)',
+        pointRadius: false,
+        pointColor: 'rgba(210, 214, 222, 1)',
+        pointStrokeColor: '#c1c7d1',
+        pointHighlightFill: '#fff',
+        pointHighlightStroke: 'rgba(220,220,220,1)',
+        data: <?= json_encode($data_grafik[1]["data"]["nko2019"]) ?>
       },
       {
         label: '2020',

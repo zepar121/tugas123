@@ -7,7 +7,7 @@ class Process extends CI_Controller {
 		parent::__construct();
 
 		// Load model
-		$this->load->model('ProcessModel');
+		$this->load->model("v3/ProcessModel");
 	}
 
 	public function sub_main_add(){
@@ -35,21 +35,20 @@ class Process extends CI_Controller {
 	public function sub_main_update(){
 		$data = array();
 
-		$judul_tabel = $_POST["judul_tabel"];
 		$data_tabel = $_POST["tabel"];
-		$tabel_lain = $_POST["tabel_lain"] ?? array();
-		
-		unset($_POST["judul_tabel"]);
 		unset($_POST["tabel"]);
-		unset($_POST["files"]);
-		if (isset($_POST["tabel_lain"])) unset($_POST["tabel_lain"]);
 
-		$id = $_POST["id"];
-		unset($_POST["id"]);
+		$main = $_POST["main"];
+		$sub = $_POST["sub"];
+		unset($_POST["main"]);
+		unset($_POST["sub"]);
 
-		$isSuccess = $this->ProcessModel->update($_POST, $id);
-		$this->ProcessModel->updateTabel($id, $judul_tabel, $data_tabel);
-		$this->ProcessModel->updateTabelLain($id, $tabel_lain);
+		$isSuccess = false;
+		if ($this->ProcessModel->updateTabel($main, $sub, $data_tabel) == true){
+			$isSuccess = true;
+		} else {
+			$isSuccess = $this->ProcessModel->addTabel($main, $sub, $data_tabel);
+		}
 
 		if ($isSuccess){
 			$data["success"] = true;

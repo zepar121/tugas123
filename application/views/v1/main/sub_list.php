@@ -5,7 +5,7 @@
        <div class="container-fluid">
          <div class="row mb-2">
            <div class="col-sm-6">
-             <h1>Nilai Kinerja Organisasi 2018</h1>
+             <h1><?= $rows[0]->judul ?></h1>
            </div>
            <div class="col-sm-5">
              <ol class="breadcrumb float-sm-right">

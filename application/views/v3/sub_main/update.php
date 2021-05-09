@@ -23,7 +23,7 @@
         <div class="col-md-12">
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Create</h3>
+              <h3 class="card-title">Update</h3>
 
               <div class="card-tools">
                 <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -34,68 +34,103 @@
               <form id="form" action="process_update" method="POST">
                 <input type="hidden" name="main" value="<?= $row->main ?>" />
                 <input type="hidden" name="sub" value="<?= $row->sub ?>" />
-                <input type="hidden" name="id" value="<?= $row->id ?>" />
-
-                <div class="col-md-10">
-                  <div class="form-group">
-                    <label for="judul">Judul</label>
-                    <input type="text" id="judul" name="judul" class="form-control" value="<?= $row->judul ?>">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="nama_iku">Nama IKU</label>
-                    <input type="text" id="nama_iku" name="nama_iku" class="form-control" value="<?= $row->nama_iku ?>">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="detail_iku">Detail IKU</label>
-                    <input type="text" id="detail_iku" name="detail_iku" class="form-control" value="<?= $row->detail_iku ?>">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="isi_sub_judul">Isi Sub Judul</label>
-                    <input class="textarea" id="isi_sub_judul" name="isi_sub_judul" placeholder="Isi Sub Judul" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></input>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="judul_tabel">Judul Tabel</label>
-                    <input type="text" id="judul_tabel" name="judul_tabel" class="form-control" value="<?= $data_tabel["judul_tabel"] ?>">
-                  </div>
-                </div>
 
                 <div class="row">
-                  <div class="col-md-6 table-responsive">
+                  <div class="col-md-7 table-responsive">
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th>T/R/C</th>
-                          <th>Q1</th>
-                          <th>Q2</th>
-                          <th>Q3</th>
-                          <th>Q4</th>
+                          <th>Bulan</th>
+                          <th>2018</th>
+                          <th>2019</th>
+                          <th>2020</th>
+                          <th>2021</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>Target</td>
-                          <td><input type="text" name="tabel[target][Q1]" class="form-control" value="<?= $data_tabel["target"]["Q1"] ?>"></td>
-                          <td><input type="text" name="tabel[target][Q2]" class="form-control" value="<?= $data_tabel["target"]["Q2"] ?>"></td>
-                          <td><input type="text" name="tabel[target][Q3]" class="form-control" value="<?= $data_tabel["target"]["Q3"] ?>"></td>
-                          <td><input type="text" name="tabel[target][Q4]" class="form-control" value="<?= $data_tabel["target"]["Q4"] ?>"></td>
+                          <td>Januari</td>
+                          <td><input type="text" name="tabel[januari][Q1]" class="form-control" value="<?= $data_tabel["januari"]["Q1"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[januari][Q2]" class="form-control" value="<?= $data_tabel["januari"]["Q2"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[januari][Q3]" class="form-control" value="<?= $data_tabel["januari"]["Q3"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[januari][Q4]" class="form-control" value="<?= $data_tabel["januari"]["Q4"] ?? "" ?>"></td>
                         </tr>
                         <tr>
-                          <td>Realisasi</td>
-                          <td><input type="text" name="tabel[realisasi][Q1]" class="form-control" value="<?= $data_tabel["realisasi"]["Q1"] ?>"></td>
-                          <td><input type="text" name="tabel[realisasi][Q2]" class="form-control" value="<?= $data_tabel["realisasi"]["Q2"] ?>"></td>
-                          <td><input type="text" name="tabel[realisasi][Q3]" class="form-control" value="<?= $data_tabel["realisasi"]["Q3"] ?>"></td>
-                          <td><input type="text" name="tabel[realisasi][Q4]" class="form-control" value="<?= $data_tabel["realisasi"]["Q4"] ?>"></td>
+                          <td>Februari</td>
+                          <td><input type="text" name="tabel[februari][Q1]" class="form-control" value="<?= $data_tabel["februari"]["Q1"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[februari][Q2]" class="form-control" value="<?= $data_tabel["februari"]["Q2"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[februari][Q3]" class="form-control" value="<?= $data_tabel["februari"]["Q3"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[februari][Q4]" class="form-control" value="<?= $data_tabel["februari"]["Q4"] ?? "" ?>"></td>
                         </tr>
                         <tr>
-                          <td>Capaian</td>
-                          <td><input type="text" name="tabel[capaian][Q1]" class="form-control" value="<?= $data_tabel["capaian"]["Q1"] ?>"></td>
-                          <td><input type="text" name="tabel[capaian][Q2]" class="form-control" value="<?= $data_tabel["capaian"]["Q2"] ?>"></td>
-                          <td><input type="text" name="tabel[capaian][Q3]" class="form-control" value="<?= $data_tabel["capaian"]["Q3"] ?>"></td>
-                          <td><input type="text" name="tabel[capaian][Q4]" class="form-control" value="<?= $data_tabel["capaian"]["Q4"] ?>"></td>
+                          <td>Maret</td>
+                          <td><input type="text" name="tabel[maret][Q1]" class="form-control" value="<?= $data_tabel["maret"]["Q1"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[maret][Q2]" class="form-control" value="<?= $data_tabel["maret"]["Q2"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[maret][Q3]" class="form-control" value="<?= $data_tabel["maret"]["Q3"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[maret][Q4]" class="form-control" value="<?= $data_tabel["maret"]["Q4"] ?? "" ?>"></td>
+                        </tr>
+                        <tr>
+                          <td>April</td>
+                          <td><input type="text" name="tabel[april][Q1]" class="form-control" value="<?= $data_tabel["april"]["Q1"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[april][Q2]" class="form-control" value="<?= $data_tabel["april"]["Q2"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[april][Q3]" class="form-control" value="<?= $data_tabel["april"]["Q3"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[april][Q4]" class="form-control" value="<?= $data_tabel["april"]["Q4"] ?? "" ?>"></td>
+                        </tr>
+                        <tr>
+                          <td>Mei</td>
+                          <td><input type="text" name="tabel[mei][Q1]" class="form-control" value="<?= $data_tabel["mei"]["Q1"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[mei][Q2]" class="form-control" value="<?= $data_tabel["mei"]["Q2"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[mei][Q3]" class="form-control" value="<?= $data_tabel["mei"]["Q3"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[mei][Q4]" class="form-control" value="<?= $data_tabel["mei"]["Q4"] ?? "" ?>"></td>
+                        </tr>
+                        <tr>
+                          <td>Juni</td>
+                          <td><input type="text" name="tabel[juni][Q1]" class="form-control" value="<?= $data_tabel["juni"]["Q1"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[juni][Q2]" class="form-control" value="<?= $data_tabel["juni"]["Q2"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[juni][Q3]" class="form-control" value="<?= $data_tabel["juni"]["Q3"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[juni][Q4]" class="form-control" value="<?= $data_tabel["juni"]["Q4"] ?? "" ?>"></td>
+                        </tr>
+                        <tr>
+                          <td>Juli</td>
+                          <td><input type="text" name="tabel[juli][Q1]" class="form-control" value="<?= $data_tabel["juli"]["Q1"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[juli][Q2]" class="form-control" value="<?= $data_tabel["juli"]["Q2"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[juli][Q3]" class="form-control" value="<?= $data_tabel["juli"]["Q3"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[juli][Q4]" class="form-control" value="<?= $data_tabel["juli"]["Q4"] ?? "" ?>"></td>
+                        </tr>
+                        <tr>
+                          <td>Agustus</td>
+                          <td><input type="text" name="tabel[agustus][Q1]" class="form-control" value="<?= $data_tabel["agustus"]["Q1"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[agustus][Q2]" class="form-control" value="<?= $data_tabel["agustus"]["Q2"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[agustus][Q3]" class="form-control" value="<?= $data_tabel["agustus"]["Q3"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[agustus][Q4]" class="form-control" value="<?= $data_tabel["agustus"]["Q4"] ?? "" ?>"></td>
+                        </tr>
+                        <tr>
+                          <td>September</td>
+                          <td><input type="text" name="tabel[september][Q1]" class="form-control" value="<?= $data_tabel["september"]["Q1"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[september][Q2]" class="form-control" value="<?= $data_tabel["september"]["Q2"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[september][Q3]" class="form-control" value="<?= $data_tabel["september"]["Q3"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[september][Q4]" class="form-control" value="<?= $data_tabel["september"]["Q4"] ?? "" ?>"></td>
+                        </tr>
+                        <tr>
+                          <td>Oktober</td>
+                          <td><input type="text" name="tabel[oktober][Q1]" class="form-control" value="<?= $data_tabel["oktober"]["Q1"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[oktober][Q2]" class="form-control" value="<?= $data_tabel["oktober"]["Q2"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[oktober][Q3]" class="form-control" value="<?= $data_tabel["oktober"]["Q3"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[oktober][Q4]" class="form-control" value="<?= $data_tabel["oktober"]["Q4"] ?? "" ?>"></td>
+                        </tr>
+                        <tr>
+                          <td>November</td>
+                          <td><input type="text" name="tabel[november][Q1]" class="form-control" value="<?= $data_tabel["november"]["Q1"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[november][Q2]" class="form-control" value="<?= $data_tabel["november"]["Q2"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[november][Q3]" class="form-control" value="<?= $data_tabel["november"]["Q3"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[november][Q4]" class="form-control" value="<?= $data_tabel["november"]["Q4"] ?? "" ?>"></td>
+                        </tr>
+                        <tr>
+                          <td>Desember</td>
+                          <td><input type="text" name="tabel[desember][Q1]" class="form-control" value="<?= $data_tabel["desember"]["Q1"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[desember][Q2]" class="form-control" value="<?= $data_tabel["desember"]["Q2"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[desember][Q3]" class="form-control" value="<?= $data_tabel["desember"]["Q3"] ?? "" ?>"></td>
+                          <td><input type="text" name="tabel[desember][Q4]" class="form-control" value="<?= $data_tabel["desember"]["Q4"] ?? "" ?>"></td>
                         </tr>
                       </tbody>
                     </table>
@@ -103,12 +138,6 @@
                   <!-- /.col -->
                 </div>
                 <!-- /.row -->
-
-                <div id="tabel_lain">
-
-                </div>
-
-                <a id="btn_tambah_tabel" type="button" class="btn btn-primary"> Tambah Tabel <i class="fas fa-plus"></i></a>
 
                 <form>
             </div>
@@ -159,98 +188,6 @@
   <!-- Toastr -->
   <script src="<?php echo base_url(); ?>assets/adminlte3/plugins/toastr/toastr.min.js"></script>
   <script>
-    var main_list = new Array();
-    var id = -1;
-
-    // process the form
-    $.ajax({
-        type: 'POST',
-        url: "<?= base_url("v3/Data/getMainList") ?>",
-        dataType: 'json', // what type of data do we expect back from the serverss
-        processData: false,
-        contentType: false,
-        cache: false,
-        async: false,
-        error: function(data) {
-          alert("AJAX ERROR")
-          alert(JSON.stringify(data));
-        }
-      })
-      // using the done promise callback
-      .done(function(data) {
-
-        data.forEach(function(value, index, array) {
-          main_list.push(value);
-        })
-
-      });
-
-    $("#btn_tambah_tabel").click(function() {
-      ++id;
-
-      var main_option_list = "";
-      main_list.forEach(function(value, index, array) {
-        main_option_list += '<option value="' + value.main + '">' + value.judul + '</option>';
-      });
-
-      $("#tabel_lain").append(
-        '\
-        <div id="tabel-' + id + '" class="row py-3">\
-          <div class="col-5 px-0">\
-            <select name="tabel_lain[' + id + '][main]" onchange="getTableList(this, ' + id + ')" class="form-control" data-main="main-' + id + '">\
-            <option value="">Pilih...</option>' + main_option_list + '</select>\
-          </div>\
-          <div class="col-5 px-0">\
-            <select name="tabel_lain[' + id + '][id_tabel]" class="form-control" data-tabel-id="sub-' + id + '">\
-            </select>\
-          </div>\
-          <div class="col-2 px-0">\
-            <button type="button" onClick="hapusItemTabel(this, ' + id + ')" class="btn btn-danger"><i class="fas fa-trash"></i></button>\
-          </div>\
-        </div>'
-      );
-    });
-
-    function hapusItemTabel(btnObject, id) {
-      $("#tabel-" + id).remove();
-    }
-
-    function getTableList(selectObject, id) {
-      $("select[data-tabel-id=sub-" + id + "]").find('option').remove().end();
-
-      var value = "";
-
-      if (selectObject instanceof jQuery) {
-        value = selectObject.val();
-      } else {
-        value = selectObject.value;
-      }
-
-      if (value == "") return;
-
-      $.ajax({
-          type: 'POST',
-          url: "<?= base_url("v3/Data/getSubMainTableList/") ?>" + value,
-          dataType: 'json', // what type of data do we expect back from the serverss
-          processData: false,
-          contentType: false,
-          cache: false,
-          async: false,
-          error: function(data) {
-            alert("AJAX ERROR")
-            alert(JSON.stringify(data));
-          }
-        })
-        // using the done promise callback
-        .done(function(data) {
-
-          for (var index = 0; index <= data.length; index++) {
-            $("select[data-tabel-id=sub-" + id + "]").append('<option value="' + data[index].id_tabel + '">' + data[index].nama_iku + " - " + data[index].judul_tabel + '</option>');
-          }
-
-        });
-    }
-
     $(function() {
       // Summernote
       $('.textarea').summernote({
@@ -286,7 +223,7 @@
       // alert("Submitted");
       // alert(JSON.stringify(formData));
 
-      var formUrl = "<?= base_url("{$row->main}/{$row->sub}/process_update") ?>";
+      var formUrl = "<?= base_url("v3/{$row->main}/{$row->sub}/process_update") ?>";
       var data = new FormData(this);
 
       // process the form
@@ -325,26 +262,12 @@
             });
 
             setTimeout(function() {
-              window.location.href = "<?= base_url("{$row->main}/{$row->sub}") ?>"; //will redirect to any page
+              window.location.href = "<?= base_url("v3/{$row->main}/{$row->sub}/update") ?>"; //will redirect to any page
             }, 2500); //will call the function after 2.5 secs.
 
           }
         });
     });
-
-    <?php
-    $id = -1;
-    ?>
-    <?php foreach ($tabel_list as $tabel) : ?>
-      setTimeout(function() {
-        $("#btn_tambah_tabel").trigger("click");
-        <?php ++$id ?>
-        var obj = $("select[data-main=main-<?= $id ?>]");
-        obj.val("<?= $tabel["main_iku"] ?>")
-        getTableList(obj, <?= $id ?>)
-      }, 50 * <?= $id + 1 ?>);
-
-    <?php endforeach; ?>
   </script>
   </body>
 

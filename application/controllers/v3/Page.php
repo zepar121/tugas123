@@ -9,7 +9,7 @@ class Page extends CI_Controller
 		parent::__construct();
 
 		// Load model
-		$this->load->model("PageModel");
+		$this->load->model("v3/PageModel");
 	}
 
 	public function index()
@@ -17,7 +17,11 @@ class Page extends CI_Controller
 		$this->load->view("base/header");
 		$this->load->view("base/sidebar");
 		$this->load->view("v3/dashboard");
-		$this->load->view("base/v3/footer");
+		$data_grafik = $this->PageModel->getDataGrafikV3();
+		$data = array(
+			"data_grafik" => $data_grafik
+		);
+		$this->load->view("base/v3/footer", $data);
 	}
 
 	public function main($id)
@@ -41,7 +45,7 @@ class Page extends CI_Controller
 				"main" => $id
 			);
 			$this->load->view("v3/main/sub_list", $data);
-			$this->load->view("base/v3/footer");
+			$this->load->view("base/v1/footer");
 		}
 	}
 
@@ -91,13 +95,10 @@ class Page extends CI_Controller
 
 		$row = $this->PageModel->getSub($main, $sub);
 		$data_tabel = $this->PageModel->getTabel($main, $sub);
-		$tabel_list = $this->PageModel->getTabelList($main, $sub);
-		array_shift($tabel_list);
 
 		$data = array(
 			"row" => $row,
-			"data_tabel" => $data_tabel,
-			"tabel_list" => $tabel_list
+			"data_tabel" => $data_tabel
 		);
 
 		$this->load->view("v3/sub_main/update", $data);
